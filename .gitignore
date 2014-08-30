@@ -1,0 +1,12 @@
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db
+*~
+composer.phar
+composer.lock
+vendor/
+bootstrap/compiled.php
+app/config/local/
+app/config/database.php
+app/config/mail.php
