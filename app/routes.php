@@ -11,7 +11,16 @@
 |
 */
 
-Route::get('/', function()
-{
+Route::get('/', function(){
 	return View::make('hello');
+});
+
+Route::get('saludos', function(){
+	$datos = array(
+		'mensaje' => "olon lolon",
+		'codigo'  => 1234
+	);
+
+	Event::fire(UpdateScoreEventHandler::EVENT, array($datos));
+	return "Oli :3";
 });
