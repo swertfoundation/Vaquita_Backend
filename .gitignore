@@ -8,4 +8,5 @@ composer.lock
 vendor/
 bootstrap/compiled.php
 app/config/local/
+app/nodejs/node_modules/
 public/packages/
