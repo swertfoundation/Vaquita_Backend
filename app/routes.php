@@ -16,6 +16,21 @@ Route::get('/', function(){
 Route::get('login', array('uses' => 'AuthController@errorLogin'));
 Route::post('login', array('uses' => 'AuthController@doLogin'));
 
+Route::post('status', function(){
+	if (Auth::check()){
+		$response = array(
+			'status' => true
+		);
+	}
+	else{
+		$response = array(
+			'status' => false
+		);
+	}
+
+	return Response::json($response, 200);
+});
+
 Route::group(array('before' => 'auth'), function(){
 
     Route::get('saludos', function(){
@@ -27,6 +42,8 @@ Route::group(array('before' => 'auth'), function(){
 		//Event::fire(UpdateScoreEventHandler::EVENT, array($datos));
 		return "Oli :3";
 	});
+
+    Route::get('logout', 'AuthController@logOut');
 
     //Rutas para realizar acciones sobre amigos
 	Route::get('amigos', array('uses' => 'FriendsController@getMyFriends'));
