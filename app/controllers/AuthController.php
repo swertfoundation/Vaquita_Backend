@@ -8,14 +8,16 @@
 | el login o las sesiones de los usuarios generados en el sistema
 |
 */
+use vaquitapp\Entities\Usuario;
+
 class AuthController extends BaseController {
 
     public function errorLogin(){
         $response = array(
             'mensaje' => 'La autenticacion en el sistema es obligatoria',
-            'codigo'  => 203
+            'codigo'  => 2103
         );
-        return Response::json($response,403);
+        return Response::json($response);
     }
 
     public function doLogin(){
@@ -29,17 +31,23 @@ class AuthController extends BaseController {
             'password' => Input::get('password'),
             'estado'   => '1'
         );
-        if( Auth::attempt( $loginWithUser , Input::get('remember', 0)) || Auth::attempt( $loginWithEmail , Input::get('remember', 0)) ){
+        if( Auth::attempt($loginWithUser) || Auth::attempt($loginWithEmail) ){
+
+            $userlogin = Usuario::find(Auth::user()->id);
+            $userlogin->firefoxos_token =Auth::user()->username."&".Auth::user()->id;
+            $userlogin->save();
+
             $response = array(
                 'mensaje' => 'Sesion Iniciada correctamente',
-                'codigo'  => 200
+                'token' => Crypt::encrypt(Auth::user()->username."&".Auth::user()->id),
+                'codigo'  => 2101
             );
         }
         else{
             $response = array(
                 'mensaje' => 'Sesion no Iniciada',
                 'error' => 'Tus datos son incorrectos o estas deshabilitado',
-                'codigo'  => 203
+                'codigo'  => 2103
             );
         }
         return Response::json($response);
@@ -50,7 +58,7 @@ class AuthController extends BaseController {
         $response = array(
             'mensaje' => 'Tu sesión ha sido cerrada',
             'info' => 'Tu sesión ha sido cerrada',
-            'codigo'  => 201
+            'codigo'  => 2102
         );
         return Response::json($response);
     }

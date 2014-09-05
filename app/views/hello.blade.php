@@ -34,6 +34,11 @@
 		<h1>
 			Vaquitapp Server API
 		</h1>
+		{{ Form::open(['url' => 'amigos/eliminar/6' , 'method' => 'delete']) }}
+			<input type="hidden" value="devswert" name="username">
+			<input type="hidden" value="eyJpdiI6Im15Tm1kdU13Z1hqN0dPSmtOMG5kZlE9PSIsInZhbHVlIjoicGFGblRTTHNvTVlENkJObnlTZmVMbjR5MTMzY0MrUTlyTHVjQ1wvYTBOVEU9IiwibWFjIjoiMGYwNGM4MGNkYmNhN2QyY2JjMDQ4YzlkMmQwOThjYzM1NWM4N2ZhMjA5NmViYWZlOTNkMzgwYzA2MWMzZTRmZCJ9" name="token">
+			<input type="submit" value="enviar">
+		{{ Form::close() }}
 	</div>
 </body>
 </html>

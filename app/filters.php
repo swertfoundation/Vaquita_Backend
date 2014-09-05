@@ -10,6 +10,7 @@
 | application. Here you may also register your custom route filters.
 |
 */
+use vaquitapp\Entities\Usuario;
 
 App::before(function($request)
 {
@@ -55,6 +56,38 @@ Route::filter('auth', function()
 Route::filter('auth.basic', function()
 {
 	return Auth::basic();
+});
+
+Route::filter('auth.firefoxos', function(){
+	$data = array(
+		'username' => Input::get('username'),
+		'firefoxos' => Input::get('token')
+	);
+	$rules = array(
+		'username' => 'required|exists:usuarios,username',
+		'firefoxos' => 'required'
+	);
+	$validators = Validator::make($data, $rules);
+	if(!$validators->fails()){
+		$infoData = explode("&", Crypt::decrypt(Input::get('token')));
+		$tempLogin = Usuario::where('username','=',$infoData[0])
+							->where('id','=',$infoData[1])
+							->get();
+		if(isset($tempLogin[0]->estado) && $tempLogin[0]->estado != 1){
+			$response = array(
+				'mensaje' => 'Credenciales no validas',
+				'codigo'  => '2103'
+			);
+			return Response::json($response);
+		}
+	}
+	else{
+		$response = array(
+			'mensaje' => 'Credenciales no validas',
+			'codigo'  => '2103'
+		);
+		return Response::json($response);
+	}
 });
 
 /*

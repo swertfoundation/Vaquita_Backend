@@ -1,0 +1,32 @@
+=============================================
+= Tipos de Codigos
+=============================================
+
+Codgios 2100 (Acceso del Sistema)
+	|-> 2101 => Acceso Permitido
+	|-> 2102 => Sesion Cerrada
+	|-> 2103 => Crdenciales de Acceso no validas
+
+Codigos 3400 (Operaciones sobre amigos)
+	|-> 3401 => Acceso Permitido para desplegar la info
+	|-> 3402 => Usuario bloqueo al usuario logeado (Al tratar de ver perfil)
+	|-> 3403 => Error al tratar de recuperar informacion
+	|-> 3404 => Amigo solicitado no se encuentra en el sistema
+	|-> 3405 => Permisos de amigos denegado
+	|-> 3406 => Solicitud de amistad a amigo
+	|-> 3407 => Error al tratar de agregar amigo
+	|-> 3408 => Amigo eliminado con exito
+	|-> 3409 => Error al tratar de eliminar al amigo
+	|-> 3410 => No se encontro informacion respecto a su solicitud
+	|-> 3411 => Ya son amigos o la solicitud ya fue enviada
+	|-> 3412 => Los usuarios son amigos en el sistema
+
+Codigos 5200 (Operaciones sobre vaquitas)
+	|-> 5201 => Acceso Permitido para desplegar la info
+	|-> 5202 => La vaquita solicitada no es publica
+	|-> 5203 => Error al tratar de recuperar informacion
+	|-> 5204 => Vaquita solicitada no se encuentra en el sistema
+	|-> 5205 => Vaquita agregada exitosamente
+	|-> 5206 => Error al tratar de recuperar la vaquita
+	|-> 5207 => Vaquita eliminada con exito
+	|-> 5208 => Error al tratar de eliminar la vaquita

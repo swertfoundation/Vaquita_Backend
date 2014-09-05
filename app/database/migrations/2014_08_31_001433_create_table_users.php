@@ -26,6 +26,7 @@ class CreateTableUsers extends Migration {
 			$tabla->string('twitter',200)->nullable();
 			$tabla->integer('estado')->unsigned();
 			$tabla->string('remember_token');
+			$tabla->string('firefoxos_token');
 			$tabla->dateTime('created_at')->default('0000-00-00 00:00:00');
 			$tabla->dateTime('updated_at')->default('0000-00-00 00:00:00');
 		});
