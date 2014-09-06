@@ -34,9 +34,16 @@
 		<h1>
 			Vaquitapp Server API
 		</h1>
-		{{ Form::open(['url' => 'amigos/eliminar/6' , 'method' => 'delete']) }}
+		{{ Form::open(['url' => 'vaquitas/desuscribirme/6' , 'method' => 'delete']) }}
 			<input type="hidden" value="devswert" name="username">
 			<input type="hidden" value="eyJpdiI6Im15Tm1kdU13Z1hqN0dPSmtOMG5kZlE9PSIsInZhbHVlIjoicGFGblRTTHNvTVlENkJObnlTZmVMbjR5MTMzY0MrUTlyTHVjQ1wvYTBOVEU9IiwibWFjIjoiMGYwNGM4MGNkYmNhN2QyY2JjMDQ4YzlkMmQwOThjYzM1NWM4N2ZhMjA5NmViYWZlOTNkMzgwYzA2MWMzZTRmZCJ9" name="token">
+
+			<input type="hidden" name="nombre" value="La vaca de cambiazo">
+			<input type="hidden" name="meta" value="233909a">
+			<input type="hidden" name="id" value="2">
+			<input type="hidden" name="finaliza" value="2014/08/12">
+			<input type="hidden" name="descripcion" value="Esta va a ser la descricion bien chevere de todo">
+
 			<input type="submit" value="enviar">
 		{{ Form::close() }}
 	</div>

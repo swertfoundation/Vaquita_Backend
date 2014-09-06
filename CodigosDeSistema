@@ -21,12 +21,25 @@ Codigos 3400 (Operaciones sobre amigos)
 	|-> 3411 => Ya son amigos o la solicitud ya fue enviada
 	|-> 3412 => Los usuarios son amigos en el sistema
 
-Codigos 5200 (Operaciones sobre vaquitas)
-	|-> 5201 => Acceso Permitido para desplegar la info
-	|-> 5202 => La vaquita solicitada no es publica
-	|-> 5203 => Error al tratar de recuperar informacion
-	|-> 5204 => Vaquita solicitada no se encuentra en el sistema
-	|-> 5205 => Vaquita agregada exitosamente
-	|-> 5206 => Error al tratar de recuperar la vaquita
-	|-> 5207 => Vaquita eliminada con exito
-	|-> 5208 => Error al tratar de eliminar la vaquita
+Codigos 4200 (Operaciones sobre vaquitas)
+	|-> 4201 => Acceso Permitido para desplegar la info
+	|-> 4202 => La vaquita solicitada no es publica
+	|-> 4203 => Error al tratar de recuperar informacion
+	|-> 4204 => Vaquita solicitada no se encuentra en el sistema
+	|-> 4205 => Vaquita agregada exitosamente
+	|-> 4206 => Error al tratar de crear la vaquita
+	|-> 4207 => Vaquita eliminada con exito
+	|-> 4208 => Error al tratar de eliminar la vaquita
+	|-> 4209 => No se encontro informacion solicitada
+	|-> 4210 => Vaquita actualizada con exito
+	|-> 4211 => Error al actulizar la vaquita
+	|-> 4212 => Usuario agregad a la vaca
+	|-> 4213 => Usuario eliminado a la vaca
+	|-> 4214 => Error al suscribir a la vaquita
+	|-> 4215 => Error al desuscribir a la vaquita
+
+Codigos 5700 (Operaciones sobre el Usuario)
+	|-> 5701 => Perfil entregado
+	|-> 5702 => Edicion de perfil correcta
+	|-> 5703 => Error al tratar de editar el perfil
+	|-> 5704 => Usuario eliminado del sistema
